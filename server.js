@@ -34,11 +34,19 @@ let store = new sessionStore({
     collection:'userSessions'
 });
 
+app.enable('trust proxy')
+
 app.use(session({
     secret: 'secret',
     saveUninitialized: false,
     resave: false,
-    store: store
+    store: store,
+    name: 'MyCoolWebAppCookieName', // This needs to be unique per-host.
+    cookie: {
+      secure: true, // required for cookies to work on HTTPS
+      httpOnly: false,
+      sameSite: 'none'
+    }
 }))
 
 let isAuth = function(req, res, next){
