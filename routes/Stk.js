@@ -64,7 +64,8 @@ function stk_push(req,res, amount, phone, transId){
 
 
 app.post('/callback', urlEncoded, function(req,res){
-  
+    
+    console.log(req.body);
 
    let result = { 
         TransactionId : req.body.Body.stkCallback.CallbackMetadata.Item[1].Value,
