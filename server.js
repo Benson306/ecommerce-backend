@@ -41,6 +41,7 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     store: store,
+    proxy: true,
     name: 'MyCoolWebAppCookieName', // This needs to be unique per-host.
     cookie: {
       secure: true, // required for cookies to work on HTTPS
