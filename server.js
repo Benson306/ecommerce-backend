@@ -19,7 +19,7 @@ mongoose.connect(mongoURI);
 
 const cors = require("cors");
 app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'https://ecomm-test.onrender.com'],
     methods: ['GET','POST','DELETE', 'PUT'],
     credentials: true // enable set cookie
 }));
@@ -109,4 +109,7 @@ app.get('/logout', urlEncoded, function(req,res){
     })
 });
 
-app.listen(8001);
+port = process.env.PORT || 8001;
+app.listen(port);
+
+console.log("App is listening at "+port)
