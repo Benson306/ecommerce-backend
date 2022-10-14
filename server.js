@@ -41,13 +41,13 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     store: store,
-    proxy: true,
-    name: 'MyCoolWebAppCookieName', // This needs to be unique per-host. Its for production only
-    cookie: {
-      secure: true, // required for cookies to work on HTTPS
-      httpOnly: false,
-      sameSite: 'none'
-    }
+   // proxy: true,
+    //name: 'MyCoolWebAppCookieName', // This needs to be unique per-host. Its for production only
+    //cookie: {
+      //secure: true, // required for cookies to work on HTTPS
+      //httpOnly: false,
+      //sameSite: 'none'
+    //}
 }))
 
 let isAuth = function(req, res, next){
@@ -102,7 +102,7 @@ app.get('/admin_auth', function(req,res){
     if(req.session.isAdmin){
         res.status(200).json('success');
     }else{
-        res.status(401).json('failed')
+        res.status(200).json('failed')
     }
 });
 
