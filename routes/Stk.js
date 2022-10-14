@@ -65,8 +65,6 @@ function stk_push(req,res, amount, phone, transId){
 
 app.post('/callback', urlEncoded, function(req,res){
     
-        
-    
         if(req.body.Body.stkCallback.ResultDesc === 'The service request is processed successfully.'){
             let result = { 
                 TransactionId : req.body.Body.stkCallback.CallbackMetadata.Item[1].Value,
