@@ -9,7 +9,7 @@ let fs = require('fs');
 let multer = require('multer');
 let path = require('path');
 
-process.env.AWS_SDK_LOAD_CONFIG = false; 
+//process.env.AWS_SDK_LOAD_CONFIG = false; 
 let s3 = require('aws-sdk/clients/s3');
 
 let s3Instance = new s3({
