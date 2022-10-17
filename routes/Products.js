@@ -9,7 +9,7 @@ let fs = require('fs');
 let multer = require('multer');
 let path = require('path');
 
-//process.env.AWS_SDK_LOAD_CONFIG = false; 
+
 let s3 = require('aws-sdk/clients/s3');
 
 let s3Instance = new s3({
@@ -19,9 +19,6 @@ let s3Instance = new s3({
 })
 
 
-//console.log(s3Instance.config.secretAcessKey);
-
-//console.log(process.env.AWS_ACCESS_KEY_ID, process.env.AWS_BUCKET_NAME, process.env.AWS_BUCKET_REGION, process.env.AWS_SECRET_KEY)
 
 const { url } = require('inspector');
 const { access } = require('fs');
